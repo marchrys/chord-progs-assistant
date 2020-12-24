@@ -1,18 +1,17 @@
 // This is a JavaScript file
 // App module
 let app = {
+  langStr: window.navigator.language,
+  lang: '',
   init: function(){
-     const langStr =  window.navigator.language;
-     let lang = '';
-
-     if(langStr.substr(0, 2) == 'fr'){
-            lang = 'fr';
+     if(app.langStr.substr(0, 2) == 'fr'){
+          app.lang = 'fr';
       }
       else{
-          lang = 'en';
+          app.lang = 'en';
       }
 
-      const section = new AppSection();
+      const section = new AppSection(app.lang);
   }
 }
 

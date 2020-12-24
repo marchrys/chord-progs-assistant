@@ -1,7 +1,10 @@
 // This is a JavaScript file
 
 class AppSection{
-  constructor(){
+  constructor(lang){
+    this.lang = lang;
+    alert(this.lang);
+
     this.addSectionToDOM();
   }
 
