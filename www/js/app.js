@@ -11,7 +11,7 @@ let app = {
           app.lang = 'en';
       }
 
-      const section = new AppSection(app.lang);
+      const makeProg = new MakeProg(app.lang);
   }
 }
 
