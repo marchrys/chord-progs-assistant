@@ -15,7 +15,6 @@ function addSectionToDOM(id){
 
             <div id="collapse${id}" class="collapse show" aria-labelledby="heading${id}" data-parent="#appAccordion">
                 <div class="card-body" id="card-body-${id}">
-                    test${id}
                 </div>
             </div>
         </div>`;
