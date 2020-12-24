@@ -34,6 +34,21 @@ class MakeProg{
             select.setAttribute('disabled', 'disabled');
         }
     });
+    // We fill the first select
+    const selChord = chords.find((chord) => chord.name === 'I');
+    const followingChords = selChord.followedBy;
+    followingChords.forEach(function(chord){
+        const option = document.createElement('option');
+        option.value = chord;
+        option.text = chord;
+        chordSelects[0].add(option);
+    });
+
+    chordSelects.forEach(function(select){
+        select.addEventListener('change', function(event){
+          console.log(`${event.currentTarget.id} value has changed to ${event.currentTarget.value}`);
+        })
+    });
   }
 
 }
