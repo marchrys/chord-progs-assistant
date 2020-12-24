@@ -1,0 +1,45 @@
+/* This is a CSS file */
+
+:root {
+  --light-color1: #F4F7BE;
+  --light-color2: #E5F77D;
+  --light-color3: #DEDA6F;
+  --dark-color1: #823038;
+  --dark-color2: #1E000E;
+}
+
+@font-face {
+    font-family: poppins;
+    src: url('../fonts/poppins/Poppins-Regular.ttf') format('truetype');
+}
+
+body {
+  font-family: poppins;
+}
+
+.navbar {
+  background-color: var(--light-color1);
+}
+
+.card-header {
+  background-color: var(--light-color1);
+}
+
+card-header h2 {
+  outline: 0 !important;
+}
+
+.card-header button {
+  color: var(--dark-color1);
+}
+
+.card-header button:hover {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.card-header button:focus {
+  /* We remove the outline on the accordion's button click */
+  box-shadow: none;
+  color: var(--dark-color1);
+}
