@@ -12,7 +12,7 @@ let app = {
           lang = 'en';
       }
 
-      console.log(lang);
+      const section = new AppSection();
   }
 }
 
