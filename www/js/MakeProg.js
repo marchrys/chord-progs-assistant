@@ -6,7 +6,7 @@ class MakeProg{
     this.id = 1;
     this.chordsNum = 5;
 
-    addSectionToDOM(this.id);
+    addSectionToDOM(this.id, texts.makeProg[this.lang]);
 
     // Card body becomes the container for this section
     this.container = document.getElementById(`card-body-${this.id}`);
