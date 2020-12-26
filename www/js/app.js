@@ -14,7 +14,7 @@ let app = {
       const navbarBrand = document.querySelector('.navbar-brand');
       navbarBrand.textContent = texts.appTitle[app.lang];
 
-      const makeProg = new MakeProg(app.lang);
+      makeProg.init(1);
   }
 }
 
