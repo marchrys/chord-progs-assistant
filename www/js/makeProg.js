@@ -56,8 +56,11 @@ const makeProg = {
           select.addEventListener('change', makeProg.handleSelectChange);
         });
         document.getElementById('play-prog-btn').addEventListener('click', function(){
-            playSound(sound_I, 0.1);
-            playSound(sound_ii, 2.1);
+            playSound(C_sound_I, 0.1);
+            playSound(C_sound_ii, 2.1);
+            playSound(C_sound_V, 4.1);
+            playSound(C_sound_I, 6.1);
+            playSound(C_sound_V, 8.1);
         });
     },
 

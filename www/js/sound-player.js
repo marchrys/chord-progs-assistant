@@ -1,19 +1,16 @@
-let sound_I, sound_ii;
+let C_sound_I, C_sound_ii, C_sound_iii, C_sound_IV, C_sound_V, C_sound_vi;
 var context; 
 var bufferLoader;
 var startTime = 0.1;
 
-function initSounds([soundUrl1, soundUrl2]) {
+function initSounds(soundUrls) {
     // Fix up prefixing
     window.AudioContext = window.AudioContext || window.webkitAudioContext;
     context = new AudioContext();
   
     bufferLoader = new BufferLoader(
       context,
-      [
-        soundUrl1,
-        soundUrl2,
-      ],
+      soundUrls,
       finishedLoadingSound
       );
   
@@ -21,8 +18,12 @@ function initSounds([soundUrl1, soundUrl2]) {
 }
   
 function finishedLoadingSound(bufferList) {
-    sound_I = bufferList[0];
-    sound_ii = bufferList[1];
+    C_sound_I = bufferList[0];
+    C_sound_ii = bufferList[1];
+    C_sound_iii = bufferList[2];
+    C_sound_IV = bufferList[3];
+    C_sound_V = bufferList[4];
+    C_sound_vi = bufferList[5];
 }
 
 function playSound(buffer, time) {
