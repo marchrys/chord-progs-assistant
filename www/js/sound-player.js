@@ -1,4 +1,11 @@
-let C_sound_I, C_sound_ii, C_sound_iii, C_sound_IV, C_sound_V, C_sound_vi;
+let sounds = [
+  'C_sound_I', 
+  'C_sound_ii', 
+  'C_sound_iii', 
+  'C_sound_IV', 
+  'C_sound_V', 
+  'C_sound_vi'
+];
 var context; 
 var bufferLoader;
 var startTime = 0.1;
@@ -18,12 +25,12 @@ function initSounds(soundUrls) {
 }
   
 function finishedLoadingSound(bufferList) {
-    C_sound_I = bufferList[0];
-    C_sound_ii = bufferList[1];
-    C_sound_iii = bufferList[2];
-    C_sound_IV = bufferList[3];
-    C_sound_V = bufferList[4];
-    C_sound_vi = bufferList[5];
+    sounds['C_sound_I'] = bufferList[0];
+    sounds['C_sound_ii'] = bufferList[1];
+    sounds['C_sound_iii'] = bufferList[2];
+    sounds['C_sound_IV'] = bufferList[3];
+    sounds['C_sound_V'] = bufferList[4];
+    sounds['C_sound_vi'] = bufferList[5];
 }
 
 function playSound(buffer, time) {

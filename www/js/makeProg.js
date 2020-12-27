@@ -42,7 +42,7 @@ const makeProg = {
         });
 
         // We fill the first select
-        const selChord = chords.find((chord) => chord.name === I);
+        const selChord = chords.find((chord) => chord.name === degrees.I);
         const followingChords = selChord.followedBy;
         followingChords.forEach(function(chord){
             const option = document.createElement('option');
@@ -55,13 +55,7 @@ const makeProg = {
         chordSelects.forEach(function(select){
           select.addEventListener('change', makeProg.handleSelectChange);
         });
-        document.getElementById('play-prog-btn').addEventListener('click', function(){
-            playSound(C_sound_I, 0.1);
-            playSound(C_sound_ii, 2.1);
-            playSound(C_sound_V, 4.1);
-            playSound(C_sound_I, 6.1);
-            playSound(C_sound_V, 8.1);
-        });
+        document.getElementById('play-prog-btn').addEventListener('click', makeProg.playChordProg);
     },
 
     handleSelectChange: function(event){
@@ -99,5 +93,25 @@ const makeProg = {
                 chordSelects[selIndex+1].add(option);
             });
         }
+    },
+    playChordProg: function(){
+        // We retrieve the selects
+        const chordSelects = document.querySelectorAll('.chord-select');
+        const chordProg = [];
+
+        chordProg.push(degrees.I);
+
+        chordSelects.forEach(function(select){
+            Object.keys(degrees).forEach(function(degree){
+                if(select.value === degree){
+                  chordProg.push(degree);
+                }
+            });
+        });
+
+        const startTime = 0.1;
+        chordProg.forEach(function(chord, index){
+            playSound(sounds['C_sound_' + chord], startTime + (2 * index));
+        });
     },
 };

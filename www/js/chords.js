@@ -1,40 +1,42 @@
 // This is a JavaScript file
-const I = 'I';
-const ii = 'ii';
-const iii = 'iii';
-const IV = 'IV';
-const V = 'V';
-const vi = 'vi';
+const degrees = {
+  I: 'I',
+  ii: 'ii',
+  iii: 'iii',
+  IV: 'IV',
+  V: 'V',
+  vi: 'vi',
+}
 
 const chords = [
     {
       id: 1,
-      name: I,
-      followedBy: [ii, iii, IV, V, vi],
+      name: degrees.I,
+      followedBy: [degrees.ii, degrees.iii, degrees.IV, degrees.V, degrees.vi],
     },
     {
       id: 2,
-      name: ii,
-      followedBy: [V],
+      name: degrees.ii,
+      followedBy: [degrees.V],
     },
     {
       id: 3,
-      name: iii,
-      followedBy: [IV, V, vi],
+      name: degrees.iii,
+      followedBy: [degrees.IV, degrees.V, degrees.vi],
     },
     {
       id: 4,
-      name: IV,
-      followedBy: [I, ii, V],
+      name: degrees.IV,
+      followedBy: [degrees.I, degrees.ii, degrees.V],
     },
     {
       id: 5,
-      name: V,
-      followedBy: [I, vi],
+      name: degrees.V,
+      followedBy: [degrees.I, degrees.vi],
     },
     {
       id: 6,
-      name: vi,
-      followedBy: [ii, iii, IV],
+      name: degrees.vi,
+      followedBy: [degrees.ii, degrees.iii, degrees.IV],
     },
 ];
