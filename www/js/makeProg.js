@@ -8,10 +8,10 @@ const makeProg = {
         
         addSectionToDOM(makeProg.id, texts.makeProg[app.lang]);
  
-        makeProg.initSelects();
+        makeProg.initSection();
     },
 
-    initSelects: function(){
+    initSection: function(){
         const container = document.getElementById(`card-body-${makeProg.id}`);
         // We add a form tag
         container.innerHTML += 
@@ -30,6 +30,7 @@ const makeProg = {
                   </select>
               </div>`;
         }
+        container.innerHTML += `<button class="btn btn-primary" id="play-prog-btn">jouer</button>`;
 
         // We retrieve the selects
         const chordSelects = container.querySelectorAll('.chord-select');
@@ -54,7 +55,10 @@ const makeProg = {
         chordSelects.forEach(function(select){
           select.addEventListener('change', makeProg.handleSelectChange);
         });
-           
+        document.getElementById('play-prog-btn').addEventListener('click', function(){
+            playSound(sound_I, 0.1);
+            playSound(sound_ii, 2.1);
+        });
     },
 
     handleSelectChange: function(event){

@@ -8,7 +8,7 @@ function addSectionToDOM(id, headerButtonText){
             <div class="card-header" id="heading${id}">
                 <h2 class="mb-0">
                     <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse${id}" aria-expanded="true" aria-controls="collapse${id}">
-                       ${headerButtonText}
+                       <i class="fas fa-music mr-2"></i>${headerButtonText}
                     </button>
                 </h2>
             </div>
