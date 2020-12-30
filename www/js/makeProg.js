@@ -20,9 +20,9 @@ const makeProg = {
         // We select the form
         const form = container.querySelector('form');
         // We add a p to the form, to display the I chord
-        form.innerHTML += `<p class="col inline text-center p-2">I</p>`;
+        // form.innerHTML += `<p class="col inline text-center p-2">I</p>`;
         // We add the selects for chord prog
-        for(let i=0; i<makeProg.chordsNum-1; i++){
+        for(let i=0; i<makeProg.chordsNum; i++){
           form.innerHTML +=
               `<div class="form-group col">
                   <select class="form-control chord-select" id="chord-select${i}">
@@ -35,20 +35,18 @@ const makeProg = {
         // We retrieve the selects
         const chordSelects = container.querySelectorAll('.chord-select');
 
+        const I = chords.find((chord) => chord.name === 'I');
+
+        const option = document.createElement('option');
+        option.value = I.name;
+        option.innerHTML = I.name;
+        chordSelects[0].add(option);
+
+
         chordSelects.forEach(function(select, index){
           if(index > 0){
               select.setAttribute('disabled', 'disabled');
           }
-        });
-
-        // We fill the first select
-        const selChord = chords.find((chord) => chord.name === degrees.I);
-        const followingChords = selChord.followedBy;
-        followingChords.forEach(function(chord){
-            const option = document.createElement('option');
-            option.value = chord;
-            option.text = chord;
-            chordSelects[0].add(option);
         });
 
         // We add an event listener to the selects
@@ -83,15 +81,16 @@ const makeProg = {
                 }
             });
             // We find the selected chord
-            const selChord = chords.find((chord) => chord.name === chordSelects[selIndex].value);
+            const selChord = chords.find((chord) => chord.name === 'I');
             const followingChords = selChord.followedBy;
+            console.log(followingChords);
             chordSelects[selIndex+1].removeAttribute('disabled');
-            followingChords.forEach(function(chord){
-                const option = document.createElement('option');
-                option.value = chord;
-                option.text = chord;
-                chordSelects[selIndex+1].add(option);
-            });
+            // followingChords.forEach(function(chord){
+            //     const option = document.createElement('option');
+            //     option.value = chord.name;
+            //     option.innerHTML = chord.name;
+            //     chordSelects[selIndex+1].add(option);
+            // });
         }
     },
     playChordProg: function(){
@@ -99,12 +98,10 @@ const makeProg = {
         const chordSelects = document.querySelectorAll('.chord-select');
         const chordProg = [];
 
-        chordProg.push(degrees.I);
-
         chordSelects.forEach(function(select){
             Object.keys(degrees).forEach(function(degree){
                 if(select.value === degree){
-                  chordProg.push(degree);
+                    chordProg.push(degree);
                 }
             });
         });
