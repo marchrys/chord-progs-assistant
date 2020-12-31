@@ -35,13 +35,15 @@ const makeProg = {
         // We retrieve the selects
         const chordSelects = container.querySelectorAll('.chord-select');
 
-        const I = chords.find((chord) => chord.name === 'I');
+        const I = chords.find((chord) => chord.value === 'I');
+        const i = chords.find((chord) => chord.value === 'i');
 
-        const option = document.createElement('option');
-        option.value = I.name;
-        option.innerHTML = I.name;
-        chordSelects[0].add(option);
-
+        [I, i].forEach(function(chord){
+            const option = document.createElement('option');
+            option.value = chord.value;
+            option.innerHTML = chord.name;
+            chordSelects[0].add(option);
+        });
 
         chordSelects.forEach(function(select, index){
           if(index > 0){
@@ -81,16 +83,17 @@ const makeProg = {
                 }
             });
             // We find the selected chord
-            const selChord = chords.find((chord) => chord.name === 'I');
+            const selChord = chords.find((chord) => chord.value === chordSelects[selIndex].value);
+ 
             const followingChords = selChord.followedBy;
-            console.log(followingChords);
             chordSelects[selIndex+1].removeAttribute('disabled');
-            // followingChords.forEach(function(chord){
-            //     const option = document.createElement('option');
-            //     option.value = chord.name;
-            //     option.innerHTML = chord.name;
-            //     chordSelects[selIndex+1].add(option);
-            // });
+            followingChords.forEach(function(chordValue){
+                const nextChord = chords.find((nChord) => nChord.value === chordValue);
+                const option = document.createElement('option');
+                option.value = nextChord.value;
+                option.innerHTML = nextChord.name;
+                chordSelects[selIndex+1].add(option);
+            });
         }
     },
     playChordProg: function(){
@@ -99,9 +102,9 @@ const makeProg = {
         const chordProg = [];
 
         chordSelects.forEach(function(select){
-            Object.keys(degrees).forEach(function(degree){
-                if(select.value === degree){
-                    chordProg.push(degree);
+            chords.forEach(function(chord){
+                if(select.value === chord.value){
+                    chordProg.push(chord.value);
                 }
             });
         });
