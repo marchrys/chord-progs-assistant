@@ -9,4 +9,8 @@ const texts = {
         en: 'Create a chord progression',
         fr: 'Créer une suite d\'accords',
     },
+    play: {
+        en: 'Play',
+        fr: 'Jouer',
+    },
 };

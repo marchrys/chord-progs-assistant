@@ -6,7 +6,8 @@ let sounds = [
   'C_sound_iii', 
   'C_sound_IV', 
   'C_sound_iv',
-  'C_sound_V', 
+  'C_sound_Vmaj', 
+  'C_sound_Vmin', 
   'C_sound_vi',
   'C_sound_VI'
 ];
@@ -36,9 +37,10 @@ function finishedLoadingSound(bufferList) {
     sounds['C_sound_iii'] = bufferList[4];
     sounds['C_sound_IV'] = bufferList[5];
     sounds['C_sound_iv'] = bufferList[6];
-    sounds['C_sound_V'] = bufferList[7];
-    sounds['C_sound_vi'] = bufferList[8];
-    sounds['C_sound_VI'] = bufferList[9];
+    sounds['C_sound_Vmaj'] = bufferList[7];
+    sounds['C_sound_Vmin'] = bufferList[8];
+    sounds['C_sound_vi'] = bufferList[9];
+    sounds['C_sound_VI'] = bufferList[10];
 }
 
 function playSound(buffer, time) {

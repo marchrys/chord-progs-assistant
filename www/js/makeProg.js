@@ -30,7 +30,9 @@ const makeProg = {
                   </select>
               </div>`;
         }
-        container.innerHTML += `<button class="btn btn-primary" id="play-prog-btn">jouer</button>`;
+        container.innerHTML += `<div class="row d-flex justify-content-center">
+                                    <button class="btn btn-primary" id="play-prog-btn">${texts.play[app.lang]}</button>
+                                </div>`;
 
         // We retrieve the selects
         const chordSelects = container.querySelectorAll('.chord-select');

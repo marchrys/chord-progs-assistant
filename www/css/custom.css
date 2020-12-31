@@ -43,3 +43,23 @@ card-header h2 {
   box-shadow: none;
   color: var(--dark-color1);
 }
+
+.btn-primary {
+  background-color: var(--dark-color1) !important;
+}
+
+.btn-primary:active {
+  background-color: var(--light-color1) !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+.btn-primary:focus {
+  background-color: var(--light-color1) !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+ 
