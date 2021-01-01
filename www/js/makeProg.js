@@ -30,7 +30,10 @@ const makeProg = {
                   </select>
               </div>`;
         }
-        container.innerHTML += `<div class="row d-flex justify-content-center">
+        container.innerHTML += `<div class="alert alert-warning d-none" id="last-chord-alert" role="alert">
+                                    ${texts.lastChordAlert[app.lang]}
+                                </div>
+                                <div class="row d-flex justify-content-center">
                                     <button class="btn btn-primary" id="play-prog-btn">${texts.play[app.lang]}</button>
                                 </div>`;
 
@@ -96,6 +99,21 @@ const makeProg = {
                 option.innerHTML = nextChord.name;
                 chordSelects[selIndex+1].add(option);
             });
+        }
+
+        // If the last chord was selected
+        if(selIndex === chordSelects.length - 1){
+            if(chordSelects[selIndex].value !== '?'){
+                const lastChords = ['I', 'i', 'Vmaj', 'Vmin', 'vi', 'bVI'];
+                console.log(chordSelects[selIndex].value);
+                console.log(lastChords.includes(chordSelects[selIndex].value));
+                if(lastChords.includes(chordSelects[selIndex].value) === false){
+                    document.getElementById('last-chord-alert').className = 'alert alert-warning d-block';
+                } else {
+                    console.log('ok');
+                    document.getElementById('last-chord-alert').className = 'alert alert-warning d-none';
+                }
+            }
         }
     },
     playChordProg: function(){

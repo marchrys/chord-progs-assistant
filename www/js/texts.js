@@ -7,10 +7,14 @@ const texts = {
     },
     makeProg: {
         en: 'Create a chord progression',
-        fr: 'Créer une suite d\'accords',
+        fr: 'Cr&#233;er une suite d\'accords',
     },
     play: {
         en: 'Play',
         fr: 'Jouer',
     },
+    lastChordAlert: {
+        en: 'The last chord of a phrase shouls be I, i, V, vi or bVI!',
+        fr: 'Le dernier accord d\'une phrase devrait &#234;tre I, i, V, vi ou bVI!',
+    }
 };
