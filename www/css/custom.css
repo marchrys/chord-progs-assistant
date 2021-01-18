@@ -1,11 +1,11 @@
 /* This is a CSS file */
 
 :root {
-  --light-color1: #F4F7BE;
-  --light-color2: #E5F77D;
-  --light-color3: #DEDA6F;
-  --dark-color1: #823038;
-  --dark-color2: #1E000E;
+  --light-color1: rgba(244, 247, 190, 1);
+  --light-color2: rgba(229, 247, 125, 1);
+  --light-color3: rgba(222, 218, 111, 1);
+  --dark-color1: rgba(130, 48, 56, 1);
+  --dark-color2: rgba(30, 0, 14, 1);
 }
 
 @font-face {
@@ -52,23 +52,19 @@ card-header h2 {
 .btn-primary {
   background-color: var(--dark-color1) !important;
   border: 0 !important;
-  color: var(--light-color2);
+  color: var(--light-color2) !important;
 }
 
-.btn-primary:active {
+/* .btn-primary:hover, .btn-primary:active {
   background-color: var(--light-color1) !important;
   outline: none !important;
   box-shadow: none !important;
   border: 0 !important;
-  color: var(--light-color2);
-}
+  color: var(--dark-color1) !important;
+} */
 
 .btn-primary:focus {
-  background-color: var(--dark-color1) !important;
-  outline: none !important;
-  box-shadow: none !important;
-  border: 0 !important;
-  color: var(--light-color2);
-}
+  box-shadow: 0 0 0 0.2rem rgba(213,160,33, 0.5) !important;
+} 
 
  
